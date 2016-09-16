@@ -2,9 +2,8 @@ const Position = require('../models/position');
 const positions = [];
 
 class PositionService{
-  constructor(){}
   static create(quote, name){
-    positions.push(new Position(quote, name));
+    return new Position(quote, name);
   }
 
   static findAll(){
@@ -22,10 +21,13 @@ class PositionService{
     let obj =  positions.find(function (position) {
       return position.name === name;
     });
-
     let i = books.indexOf(obj);
     if(i != -1) books.splice(i, 1);
   }
 
+  static addPosition(position){
+    positions.push(position);
+  }
 }
+
 module.exports = PositionService;

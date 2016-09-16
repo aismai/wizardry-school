@@ -3,7 +3,6 @@ class Position {
     this.setQuote(quote);
     this.setName(name);
   }
-
   setQuote(quote){
     this.quote = quote;
   }
@@ -19,5 +18,12 @@ class Position {
   getName(){
     return this.name;
   }
+
+  save(){
+    PositionService.addPosition(this);
+  }
+
 }
+
 module.exports = Position;
+const PositionService = require('../services/position-service');

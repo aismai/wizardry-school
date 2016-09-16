@@ -1,15 +1,15 @@
 const Person = require('./common/person');
 const ParentService = require('../services/parent-service');
+
 class Parent extends Person {
-  constructor(name, contacts) {
-    super(name, contacts);
+  constructor(user) {
+    super(user);
   }
 
  save(){
-   ParentService.add(this);
+   ParentService.addParent(this);
  }
 
 }
-
 
 module.exports = Parent;

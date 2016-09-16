@@ -52,6 +52,11 @@ class Subject {
   getPayOff(){
     return this.hours * this.quote;
   }
+
+  save(){
+    SubjectService.addSubject(this);
+  }
 }
 
 module.exports = Subject;
+const SubjectService = require('../services/subject-service');

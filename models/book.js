@@ -1,3 +1,4 @@
+const BookService = require('../services/book-service');
 
 class Book {
   constructor(subject, name, level){
@@ -28,6 +29,9 @@ class Book {
     return  this.level;
   }
 
+  save(){
+    BookService.addBook(this);
+  }
 }
 
 module.exports = Book;

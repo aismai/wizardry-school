@@ -2,10 +2,8 @@ const Subject = require('../models/subject');
 const subjects = [];
 
 class SubjectService{
-  constructor(){}
-
   static create(name, level, hours, quote){
-    subjects.push(new Subject(name, level, hours, quote))
+    return new Subject(name, level, hours, quote);
   }
 
   static findAll(){
@@ -30,6 +28,10 @@ class SubjectService{
 
   static getPayment(subject){
     return subject.quote * subject.hours;
+  }
+
+  static addSubject(subject){
+    subjects.push(subject);
   }
 
 }

@@ -1,21 +1,13 @@
-const Parent = require('../models/parent');
 const parents = [];
 
 class ParentService {
-  constructor(){
+  static create(user){
+    return new Parent(user);
   }
-
-  // static create(user){
-  //   return new Parent(user);
-  // }
 
   static findAll(){
     let array = [];
     return parents.concat(array);
-  }
-
-  static add(parent) {
-    parents.push(parent);
   }
 
   static findByName(name){
@@ -34,11 +26,14 @@ class ParentService {
     let obj =  parents.find(function (parent) {
       return parent.name === name;
     });
-
     let i = parents.indexOf(obj);
     if(i != -1) parents.splice(i, 1);
   }
 
+  static addParent(parent) {
+    parents.push(parent);
+  }
 }
 
 module.exports = ParentService;
+const Parent = require('../models/parent');

@@ -1,10 +1,13 @@
-const Teacher = require('../models/teacher');
-const  SubjectService = require('./subject-service');
-const TeachersRoleService = require('../services/teachers-role-service');
 const teachers = [];
 
 class TeacherService {
-  constructor() {
+  static create(user, position){
+    return new Teacher(user, position);
+  }
+
+  static findAll(){
+    let array = [];
+    return teachers.concat(array);
   }
 
   static salary(teacher){
@@ -16,6 +19,11 @@ class TeacherService {
     return sum + teacher.position.quote;
   }
 
+  static addTeacher(teacher){
+    teachers.push(teacher);
+  }
+
 }
 
 module.exports = TeacherService;
+const Teacher = require('../models/teacher');

@@ -1,5 +1,4 @@
-const Teacher = require('./teacher');
-const Subject = require('./subject');
+const TeachersRoleService = require('../services/teachers-role-service');
 
 class TeachersRole {
   constructor(subject, teacher){
@@ -22,6 +21,9 @@ class TeachersRole {
     return this.teacher
   }
 
+  save(){
+    TeachersRoleService.addTeachersRole(this);
+  }
 }
 
 module.exports = TeachersRole;

@@ -1,15 +1,9 @@
-const Student = require('../models/student');
 const students = [];
 
 class StudentService {
-  constructor(){
+  static create(user){
+    return new Student(user);
   }
-
-  // static create(user){
-  //   let newStudent = new Student(user);
-  //   // students.push(newStudent);
-  //   return newStudent;
-  // }
 
   static findAll(){
     let array = [];
@@ -36,3 +30,4 @@ class StudentService {
 }
 
 module.exports = StudentService;
+const Student = require('../models/student');

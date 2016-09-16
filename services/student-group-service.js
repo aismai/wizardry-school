@@ -1,8 +1,8 @@
-const StudentGroup = require('../models/student-group');
 const studentGroups = [];
 
 class StudentGroupService {
-  constructor(){
+  static create(level, name){
+    return new StudentGroup(level, name);
   }
 
   static findAll(){
@@ -16,12 +16,12 @@ class StudentGroupService {
     });
   }
 
-
   static findGroupByName(name){
     return studentGroups.find(function (studentGroup) {
       return   studentGroup.groupName() === name;
     });
   }
+
 
   static addGroup(group){
     studentGroups.push(group);
@@ -38,3 +38,4 @@ class StudentGroupService {
 }
 
 module.exports = StudentGroupService;
+const StudentGroup = require('../models/student-group');

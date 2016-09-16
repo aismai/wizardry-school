@@ -1,4 +1,3 @@
-
 class Person {
   constructor(user) {
     this.setName(user.name);
@@ -38,6 +37,5 @@ class Person {
   }
 
 }
-
 
 module.exports = Person;

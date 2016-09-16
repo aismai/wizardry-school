@@ -1,5 +1,3 @@
-const StudentGroupService = require('../services/student-group-service');
-
 class StudentGroup {
   constructor(level, name){
     this.setLevel(level);
@@ -8,7 +6,6 @@ class StudentGroup {
     this.teachersRoles = [];
     this.setActive(false);
   }
-
   setLevel(level){
     this.level = level;
   }
@@ -51,3 +48,4 @@ class StudentGroup {
 }
 
 module.exports = StudentGroup;
+const StudentGroupService = require('../services/student-group-service');
