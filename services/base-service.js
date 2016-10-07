@@ -7,8 +7,8 @@ class BaseService {
     throw new Error(`Must be implemented.`);
   }
 
-  static add(value) {
-    this.getStore().add(value);
+  static add(object) {
+    this.getStore().add(object);
   }
 
   static findBy(field, param){

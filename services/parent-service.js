@@ -1,4 +1,3 @@
-const Store = require('../services/store');
 const BaseService = require('./base-service');
 const store = require('./global-store');
 
@@ -11,7 +10,6 @@ class ParentService extends BaseService{
   static getStore(){
     return store.get('Parents');
   }
-
 }
 
 module.exports = ParentService;

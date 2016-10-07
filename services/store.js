@@ -4,8 +4,8 @@ class Store extends Map {
   }
 
   getCounter(){
-    this._counter = ( this._counter || 0) + 1;
-    return this._counter;
+    this.counter = ( this.counter || 0) + 1;
+    return this.counter;
   }
 
   findBy(field, param) {
@@ -34,8 +34,9 @@ class Store extends Map {
     let collection = object.constructor.name + 's';
 
     if(this.has(collection)){
-      this.get(collection).set(this.get(collection).getCounter(), object)
+      this.get(collection).set(this.get(collection).getCounter(), object);
     } else {
+      // this.set(collection, new Store().set(this.getCounter(), object));
       throw new Error(`Couldn't find collection: ${collection}`);
     }
 
