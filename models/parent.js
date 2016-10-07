@@ -7,7 +7,7 @@ class Parent extends Person {
   }
 
  save(){
-   ParentService.addParent(this);
+   ParentService.add(this);
  }
 
 }

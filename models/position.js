@@ -20,7 +20,7 @@ class Position {
   }
 
   save(){
-    PositionService.addPosition(this);
+    PositionService.add(this);
   }
 
 }

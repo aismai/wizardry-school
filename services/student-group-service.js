@@ -1,39 +1,32 @@
-const studentGroups = [];
+const BaseService = require('./base-service');
 
-class StudentGroupService {
+class StudentGroupService extends BaseService {
   static create(level, name){
     return new StudentGroup(level, name);
   }
 
-  static findAll(){
-    let array = [];
-    return studentGroups.concat(array);
+  static getStore(){
+    return store.get('StudentGroups');
   }
 
-  static findBy(field, param){
-    return studentGroups.filter(function (elem) {
-      return elem[field] === param;
-    });
-  }
-
-  static findGroupByName(name){
-    return studentGroups.find(function (studentGroup) {
-      return   studentGroup.groupName() === name;
-    });
-  }
-
-
-  static addGroup(group){
-    studentGroups.push(group);
+  static findGroup(group){
+    return StudentGroupService.findBy('groupName', group);
   }
 
   static getTeachers(group){
-    return studentGroups.find
+    return StudentGroupService.findGroup(group).teachersRoles;
   }
 
-  static getStudents(name) {
-    let group = StudentGroupService.findByGroupName(name);
-    return group.students;
+  static getStudents(group) {
+    return StudentGroupService.findGroup(group).students;
+  }
+
+  static addStudent(student, group){
+    StudentGroupService.findGroup(group).students.push(student);
+  }
+
+  static addTeachersRole(group, teachersRole){
+    StudentGroupService.findGroup(group).teachersRoles.push(teachersRole);
   }
 }
 

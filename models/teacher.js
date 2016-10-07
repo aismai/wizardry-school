@@ -28,7 +28,7 @@ class Teacher extends Person {
     return this.position;
   }
   save(){
-    TeacherService.addTeacher(this);
+    TeacherService.add(this);
   }
 }
 

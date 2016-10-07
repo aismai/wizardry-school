@@ -22,7 +22,7 @@ class TeachersRole {
   }
 
   save(){
-    TeachersRoleService.addTeachersRole(this);
+    TeachersRoleService.add(this);
   }
 }
 

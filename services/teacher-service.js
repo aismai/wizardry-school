@@ -1,13 +1,8 @@
-const teachers = [];
+const BaseService = require('./base-service');
 
-class TeacherService {
+class TeacherService extends BaseService {
   static create(user, position){
     return new Teacher(user, position);
-  }
-
-  static findAll(){
-    let array = [];
-    return teachers.concat(array);
   }
 
   static salary(teacher){
@@ -19,11 +14,12 @@ class TeacherService {
     return sum + teacher.position.quote;
   }
 
-  static addTeacher(teacher){
-    teachers.push(teacher);
+  static getStore(){
+    return store.get('Teachers');
   }
-
 }
 
 module.exports = TeacherService;
+
+const TeachersRoleService = require('./teachers-role-service');
 const Teacher = require('../models/teacher');

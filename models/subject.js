@@ -1,11 +1,11 @@
 const Teacher = require('./teacher');
 
 class Subject {
-  constructor(name, level, hours, quote) {
-    this.setName(name);
-    this.setLevel(level);
-    this.setHours(hours);
-    this.setQuote(quote);
+  constructor(subject) {
+    this.setName(subject.name);
+    this.setLevel(subject.level);
+    this.setHours(subject.hours);
+    this.setQuote(subject.quote);
     this.books = [];
   }
 
@@ -54,7 +54,7 @@ class Subject {
   }
 
   save(){
-    SubjectService.addSubject(this);
+    SubjectService.add(this);
   }
 }
 

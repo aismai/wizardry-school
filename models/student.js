@@ -6,6 +6,7 @@ class Student extends Person {
     super(user);
     this.parents = [];
   }
+
   setParents(parents){
     this.parents = parents;
   }
@@ -13,12 +14,13 @@ class Student extends Person {
   getParents(){
     return this.parents;
   }
+
   addParent(parent){
     this.parents.push(parent);
   }
 
   save(){
-    StudentService.addStudent(this);
+    StudentService.add(this);
   }
 }
 

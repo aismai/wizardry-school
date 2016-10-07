@@ -30,7 +30,7 @@ class Book {
   }
 
   save(){
-    BookService.addBook(this);
+    BookService.add(this);
   }
 }
 

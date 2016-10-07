@@ -1,7 +1,7 @@
 class StudentGroup {
   constructor(level, name){
     this.setLevel(level);
-    this.setGroupNumber(name);
+    this.setGroupName(name);
     this.students = [];
     this.teachersRoles = [];
     this.setActive(false);
@@ -14,12 +14,12 @@ class StudentGroup {
     return this.level;
   }
 
-  setGroupNumber(number){
-    this.groupNumber = number;
+  setGroupName(number){
+    this.groupName = number;
   }
 
-  getGroupNumber(){
-    return this.groupNumber;
+  getGroupName(){
+    return this.groupName;
   }
 
   getStudents(){

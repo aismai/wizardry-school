@@ -1,21 +1,13 @@
-const teachersRoles = [];
+const BaseService = require('./base-service');
+const StudentGroupService = require('./student-group-service');
 
-class TeachersRoleService {
+class TeachersRoleService extends BaseService {
   static create(subject, teacher){
     return new TeachersRole(subject, teacher);
   }
 
-  static findAll(){
-    let array = [];
-    return teachersRoles.concat(array);
-  }
-
-  static addRole(role){
-    teachersRoles.push(role);
-  }
-
   static findRoles(teacher){
-    let groups = StudentGroupService.findAll();
+    let groups = StudentGroupService.getAll();
     let allRoles = [];
     groups.forEach(function (group) {
       allRoles.push.apply(allRoles,group.teachersRoles.filter(function (elem) { return elem.teacher === teacher }));
@@ -23,9 +15,6 @@ class TeachersRoleService {
     return allRoles;
   }
 
-  static addTeachersRole(teachersrole){
-    teachersRoles.push(teachersrole);
-  }
 }
 
 module.exports = TeachersRoleService;
