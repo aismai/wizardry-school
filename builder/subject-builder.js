@@ -1,8 +1,11 @@
-const Subject = require('../models/subject');
+const subjects = require('./data/subject-data');
+const SubjectService = require('../services/subject-service');
 
 class SubjectBuilder {
-  static create(name, level, hours, quote){
-    return new Subject(name, level, hours, quote);
+  static fillSubjects(store){
+    for(let subject in subjects){
+      store.save(SubjectService.create(subjects[subject]));
+    }
   }
 }
 

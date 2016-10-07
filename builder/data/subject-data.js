@@ -1,23 +1,44 @@
 module.exports = {
   numerology : {
-    name: 'Numerology'
+    name: 'Numerology',
+    level: 5,
+    hours: 1,
+    quote: 100
   },
   herbology : {
-    name: 'Herbology'
+    name: 'Herbology',
+    level: 5,
+    hours: 2,
+    quote: 100
   },
   charms : {
-    name: 'Charms'
+    name: 'Charms',
+    level: 5,
+    hours: 4,
+    quote: 100
   },
   darkArts : {
-    name: 'Dark Arts Defence'
+    name: 'Dark Arts',
+    level: 5,
+    hours: 2,
+    quote: 100
   },
-  transfiguration : {
-    name: 'Transfiguration'
+  astronomy : {
+    name: 'Astronomy',
+    level: 5,
+    hours: 4,
+    quote: 100
   },
   potions : {
-    name: 'Potions'
+    name: 'Potions',
+    level: 5,
+    hours: 2,
+    quote: 100
   },
   alchemy : {
-    name: 'Alchemy'
+    name: 'Alchemy',
+    level: 5,
+    hours: 2,
+    quote: 100
   }
 };
