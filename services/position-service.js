@@ -1,5 +1,6 @@
 const Position = require('../models/position');
 const BaseService = require('./base-service');
+const store = require('./global-store');
 
 class PositionService extends BaseService {
   static create(quote, name){

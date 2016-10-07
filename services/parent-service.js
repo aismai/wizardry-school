@@ -1,7 +1,7 @@
 const Store = require('../services/store');
 const BaseService = require('./base-service');
+const store = require('./global-store');
 
-const parents = new Store();
 
 class ParentService extends BaseService{
   static create(user){
@@ -9,7 +9,7 @@ class ParentService extends BaseService{
   }
 
   static getStore(){
-    return parents;
+    return store.get('Parents');
   }
 
 }
